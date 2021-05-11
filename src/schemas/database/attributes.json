@@ -1,0 +1,18 @@
+{
+  "$id": "/system/schema/database.document.resource.attributes",
+  "title": "Database.Document.Resource.Attributes",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "/system/schema/database.document.id"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
