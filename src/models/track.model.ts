@@ -16,7 +16,13 @@ export default function (app: Application): Model<any> {
     }],
     artist: { type: String },
     title: { type: String, required: true },
-    url: { type: String, required: true },
+    audio: {
+      '0': String,
+      '-1': String,
+      '-2': String,
+      '-3': String,
+    },
+    url: { type: String },
   }, {
     timestamps: true
   });

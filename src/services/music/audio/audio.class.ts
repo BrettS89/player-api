@@ -21,6 +21,7 @@ export class Audio{
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async create (data: Data, params?: Params): Promise<Data> {
+    console.log(data);
     const id = uuid();
     deleteFile();
     await downloadAudio(data.url);
