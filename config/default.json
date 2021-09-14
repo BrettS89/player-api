@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "app.env": "is this going to work?",
-  "port": 3030,
+  "port": 8081,
   "public": "../public/",
   "paginate": {
     "default": 10,
