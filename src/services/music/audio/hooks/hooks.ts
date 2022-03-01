@@ -5,12 +5,12 @@ import https from 'https';
 import ffmpeg from 'fluent-ffmpeg';
 
 export const deleteFile = () => {
-  fs.readdir(path.join('./public'), (err, files) => {
+  fs.readdir(path.join('./public/audio/'), (err, files) => {
     if (err) throw err;
 
     files.forEach((file: string) => {
       if (file.length > 15) {
-        fs.unlink('./public/' + file, (err) => {
+        fs.unlink('./public/audio/' + file, (err) => {
           if (err) {
             throw err;
           }
@@ -22,7 +22,7 @@ export const deleteFile = () => {
 
 export const downloadAudio = (url: string): Promise<boolean> => {
   return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream('./public/audio.mp3');
+    const file = fs.createWriteStream('./public/audio/audio.mp3');
     https.get(url, res => {
       res.pipe(file);
       file.on('finish', () => resolve(true));
@@ -33,7 +33,7 @@ export const downloadAudio = (url: string): Promise<boolean> => {
 
 export const convertToWav = (): Promise<boolean> => {
   return new Promise((resolve, reject) => {
-    ffmpeg('./public/audio.mp3')
+    ffmpeg('./public/audio/audio.mp3')
       .toFormat('wav')
       .on('error', (err) => {
           reject(err.message);
@@ -41,7 +41,7 @@ export const convertToWav = (): Promise<boolean> => {
       .on('end', () => {
         resolve(true)
       })
-      .save('./public/audio.wav');
+      .save('./public/audio/audio.wav');
   });
 };
 

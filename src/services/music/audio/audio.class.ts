@@ -25,7 +25,7 @@ export class Audio{
     deleteFile();
     await downloadAudio(data.url);
     await convertToWav();
-    await executeCommand(`soundstretch ./public/audio.wav ./public/${id}.wav -pitch=${data.pitch}`);
+    await executeCommand(`soundstretch ./public/audio/audio.wav ./public/audio/${id}.wav -pitch=${data.pitch}`);
     data.url = `${this.app.get('audioUrl')}/${id}.wav`;
     return data;
   }

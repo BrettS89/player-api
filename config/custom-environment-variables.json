@@ -7,5 +7,6 @@
     "public": "S3_PUBLIC_KEY",
     "secret": "S3_SECRET_KEY"
   },
-  "audioUrl": "AUDIO_URL"
+  "audioUrl": "AUDIO_URL",
+  "port": "PORT"
 }
